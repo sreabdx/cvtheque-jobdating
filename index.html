@@ -25,6 +25,7 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease;
         }
 
         .header {
@@ -73,6 +74,20 @@
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #fbb908 0%, #ffd54f 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .info-box p {
+            color: #190038;
+            font-weight: 600;
+            font-size: 1.1em;
         }
 
         .specialties-grid {
@@ -125,12 +140,6 @@
             transform: translateY(-1px);
         }
 
-        .specialty-btn.active {
-            background: linear-gradient(135deg, #fbb908 0%, #ffd54f 100%);
-            color: #190038;
-            border-color: #190038;
-        }
-
         .specialty-text {
             flex: 1;
             text-align: left;
@@ -140,140 +149,6 @@
             font-size: 1.3em;
             margin-left: 10px;
             color: #fbb908;
-        }
-
-        .specialty-btn.active .specialty-icon {
-            color: #190038;
-        }
-
-        .iframe-container {
-            margin-top: 30px;
-            display: none;
-            background: #f5f5f5;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .iframe-container.active {
-            display: block;
-        }
-
-        .iframe-header {
-            background: linear-gradient(135deg, #190038 0%, #4a0a6c 100%);
-            padding: 15px 20px;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .iframe-header h3 {
-            font-size: 1.1em;
-            font-weight: 600;
-        }
-
-        .close-btn {
-            background: #fbb908;
-            color: #190038;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .close-btn:hover {
-            background: #ffd54f;
-            transform: scale(1.05);
-        }
-
-        .iframe-wrapper {
-            width: 100%;
-            height: 600px;
-            background: white;
-            position: relative;
-        }
-
-        .iframe-wrapper iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .iframe-fallback {
-            display: none;
-            padding: 40px;
-            text-align: center;
-            background: white;
-        }
-
-        .iframe-fallback.show {
-            display: block;
-        }
-
-        .iframe-fallback h3 {
-            color: #190038;
-            margin-bottom: 15px;
-        }
-
-        .iframe-fallback p {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .iframe-fallback a {
-            display: inline-block;
-            background: linear-gradient(135deg, #190038 0%, #4a0a6c 100%);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .iframe-fallback a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #fbb908 0%, #ffd54f 100%);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .info-box p {
-            color: #190038;
-            font-weight: 600;
-            font-size: 1.1em;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 25px;
-            }
-
-            .header h1 {
-                font-size: 2em;
-            }
-
-            .specialties-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .iframe-wrapper {
-                height: 500px;
-            }
-
-            .header-chat-hint {
-                font-size: 0.85em;
-                padding: 9px 16px;
-            }
         }
 
         .events-btn {
@@ -320,6 +195,25 @@
             line-height: 1.3;
         }
 
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .specialties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-chat-hint {
+                font-size: 0.85em;
+                padding: 9px 16px;
+            }
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -329,10 +223,6 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-        }
-
-        .container {
-            animation: fadeInUp 0.6s ease;
         }
     </style>
 </head>
@@ -352,82 +242,65 @@
         </div>
 
         <div class="specialties-grid">
-            <button class="specialty-btn" onclick="loadDropbox('Marketing & Communication', 'https://www.dropbox.com/scl/fo/qf7ntlqquq4ppgi93u790/ADOAb1LBABBdcPV0oCmwPCU?rlkey=p3clkxtre58hb2t2heqmm4rsx&st=jucckuc3&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/qf7ntlqquq4ppgi93u790/ADOAb1LBABBdcPV0oCmwPCU?rlkey=p3clkxtre58hb2t2heqmm4rsx&st=jucckuc3&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Marketing & Communication</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Finance', 'https://www.dropbox.com/scl/fo/o4udv48h8l4obnsbm8254/ALAoxmQznF5b_HVdOcoFjzs?rlkey=yvq5uy48s6wq9xrgtxkusc40d&st=nminttus&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/o4udv48h8l4obnsbm8254/ALAoxmQznF5b_HVdOcoFjzs?rlkey=yvq5uy48s6wq9xrgtxkusc40d&st=nminttus&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Finance</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Marketing Digital', 'https://www.dropbox.com/scl/fo/bky7sff4rxldf8hh64q4j/AP3-twDjpwtevuihfKcDDWo?rlkey=0dqioyr4j5ycjcnixs8p81ycp&st=amc8orbb&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/bky7sff4rxldf8hh64q4j/AP3-twDjpwtevuihfKcDDWo?rlkey=0dqioyr4j5ycjcnixs8p81ycp&st=amc8orbb&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Marketing Digital</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Commercial & Business Development', 'https://www.dropbox.com/scl/fo/8prsn5ugm8frq8nqmeoik/AORd6yXkWz3G4mJBA6ybo0g?rlkey=qa15z6um8sadwqj742vxnntzd&st=4vbentak&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/8prsn5ugm8frq8nqmeoik/AORd6yXkWz3G4mJBA6ybo0g?rlkey=qa15z6um8sadwqj742vxnntzd&st=4vbentak&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Commercial & Business Development</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Commerce International', 'https://www.dropbox.com/scl/fo/qzk0xup1jaygestensmi3/AEY-spbJQQXVkghPeWOpgJ4?rlkey=fkf8bhq4uj0i4bcvco41mg4p4&st=fvy5646u&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/qzk0xup1jaygestensmi3/AEY-spbJQQXVkghPeWOpgJ4?rlkey=fkf8bhq4uj0i4bcvco41mg4p4&st=fvy5646u&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Commerce International</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Événementiel', 'https://www.dropbox.com/scl/fo/8hpg0w888w8hqxug7vvr3/AMJzRP3RdexYXgfVcuv1ApA?rlkey=4lysinkeka5dd03dp9p90nwje&st=lbm3xmor&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/8hpg0w888w8hqxug7vvr3/AMJzRP3RdexYXgfVcuv1ApA?rlkey=4lysinkeka5dd03dp9p90nwje&st=lbm3xmor&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Événementiel</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Management', 'https://www.dropbox.com/scl/fo/cgosuiad5jl3sa8gplz7b/APifN7c7m96n5-_fnzbVBPs?rlkey=z6f7rorru5bam1bmmr10grljk&st=cgctwb15&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/cgosuiad5jl3sa8gplz7b/APifN7c7m96n5-_fnzbVBPs?rlkey=z6f7rorru5bam1bmmr10grljk&st=cgctwb15&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Management</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Data & IA', 'https://www.dropbox.com/scl/fo/dnrgw16srilxkkn9u05el/ALIw8bNJhYbv-HEagEneGe0?rlkey=rx13r9gmnopljtf8cizbvrslx&st=h51niuo8&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/dnrgw16srilxkkn9u05el/ALIw8bNJhYbv-HEagEneGe0?rlkey=rx13r9gmnopljtf8cizbvrslx&st=h51niuo8&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Data & IA</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Achats, Supply Chain & Logistique', 'https://www.dropbox.com/scl/fo/f82tq0deshwbw6i30538v/APPcDftk0tvhTeqtluHC8QM?rlkey=f597wt3acsquakcckbu5amc91&st=mltnduuq&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/f82tq0deshwbw6i30538v/APPcDftk0tvhTeqtluHC8QM?rlkey=f597wt3acsquakcckbu5amc91&st=mltnduuq&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Achats, Supply Chain & Logistique</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Ressources Humaines', 'https://www.dropbox.com/scl/fo/w3cgkb1dq3b53ty16hsdg/ABfdTQDysAXwUQgHsx9vYF4?rlkey=0r1wav87mldlpf85vbbze69k3&st=hxm9avs6&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/w3cgkb1dq3b53ty16hsdg/ABfdTQDysAXwUQgHsx9vYF4?rlkey=0r1wav87mldlpf85vbbze69k3&st=hxm9avs6&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Ressources Humaines</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('RSE', 'https://www.dropbox.com/scl/fo/8yj6bc86jaxfrwddta23u/AO9qx-4GfNpOE7e6XsiMDs4?rlkey=nbtyo9akidv3erg6ziblp4og6&st=g90klwz4&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/8yj6bc86jaxfrwddta23u/AO9qx-4GfNpOE7e6XsiMDs4?rlkey=nbtyo9akidv3erg6ziblp4og6&st=g90klwz4&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">RSE</span>
                 <span class="specialty-icon">→</span>
-            </button>
+            </a>
 
-            <button class="specialty-btn" onclick="loadDropbox('Design & Création Visuelle', 'https://www.dropbox.com/scl/fo/xzjxuui8cpihiqgh6ewe7/AK1FJYR768M4wvrF0C-7LMI?rlkey=yhcxdziotd8eod77fm7a1kx95&st=s4yv9t4q&dl=0')">
+            <a class="specialty-btn" href="https://www.dropbox.com/scl/fo/xzjxuui8cpihiqgh6ewe7/AK1FJYR768M4wvrF0C-7LMI?rlkey=yhcxdziotd8eod77fm7a1kx95&st=s4yv9t4q&dl=0" target="_blank" rel="noopener noreferrer">
                 <span class="specialty-text">Design & Création Visuelle</span>
                 <span class="specialty-icon">→</span>
-            </button>
-        </div>
-
-        <div class="iframe-container" id="iframeContainer">
-            <div class="iframe-header">
-                <h3 id="iframeTitle">Chargement...</h3>
-                <button class="close-btn" onclick="closeIframe()">✕ Fermer</button>
-            </div>
-            <div class="iframe-wrapper">
-                <iframe id="dropboxFrame" src="" allowfullscreen></iframe>
-                <div class="iframe-fallback" id="fallback">
-                    <h3>⚠️ Impossible d'afficher Dropbox ici</h3>
-                    <p>Dropbox ne permet pas l'affichage intégré pour des raisons de sécurité.</p>
-                    <a href="" id="fallbackLink" target="_blank" rel="noopener noreferrer">
-                        Ouvrir dans un nouvel onglet →
-                    </a>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -450,70 +323,6 @@
             s.async=1;
             d.getElementsByTagName("head")[0].appendChild(s);
         })();
-    </script>
-
-    <script>
-        let currentButton = null;
-
-        function loadDropbox(title, url) {
-            if (currentButton) {
-                currentButton.classList.remove('active');
-            }
-            event.target.closest('.specialty-btn').classList.add('active');
-            currentButton = event.target.closest('.specialty-btn');
-
-            const container = document.getElementById('iframeContainer');
-            const iframe = document.getElementById('dropboxFrame');
-            const fallback = document.getElementById('fallback');
-            const titleElement = document.getElementById('iframeTitle');
-            const fallbackLink = document.getElementById('fallbackLink');
-
-            titleElement.textContent = title;
-            fallbackLink.href = url;
-
-            fallback.classList.remove('show');
-            iframe.style.display = 'block';
-
-            iframe.src = url;
-            container.classList.add('active');
-
-            setTimeout(() => {
-                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 100);
-
-            setTimeout(() => {
-                try {
-                    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                    if (!iframeDoc.body || iframeDoc.body.children.length === 0) {
-                        showFallback();
-                    }
-                } catch (e) {
-                    showFallback();
-                }
-            }, 3000);
-        }
-
-        function showFallback() {
-            const iframe = document.getElementById('dropboxFrame');
-            const fallback = document.getElementById('fallback');
-            iframe.style.display = 'none';
-            fallback.classList.add('show');
-        }
-
-        function closeIframe() {
-            const container = document.getElementById('iframeContainer');
-            const iframe = document.getElementById('dropboxFrame');
-
-            container.classList.remove('active');
-            iframe.src = '';
-
-            if (currentButton) {
-                currentButton.classList.remove('active');
-                currentButton = null;
-            }
-
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
     </script>
 </body>
 </html>
