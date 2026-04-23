@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquête de Satisfaction - Job Dating</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #190038 0%, #4a0a6c 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header h1 {
+            color: #190038;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+
+        .accent-line {
+            width: 80px;
+            height: 4px;
+            background: #fbb908;
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .question-box {
+            background: linear-gradient(135deg, #fbb908 0%, #ffd54f 100%);
+            border-radius: 14px;
+            padding: 30px 35px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .question-box p {
+            color: #190038;
+            font-size: 1.35em;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .buttons-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .choice-btn {
+            flex: 1;
+            max-width: 200px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-bottom: 5px solid rgba(255,255,255,0.2);
+            background: linear-gradient(135deg, #4a0a6c 0%, #190038 100%);
+            color: white;
+            font-size: 1.3em;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.2s ease;
+            position: relative;
+            top: 0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .choice-btn:hover {
+            top: -3px;
+            border-color: rgba(255,255,255,0.9);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 25px rgba(255,255,255,0.15);
+            text-shadow: 0 0 10px rgba(255,255,255,0.7);
+        }
+
+        .choice-btn:active {
+            top: 3px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .btn-emoji {
+            font-size: 1.5em;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 25px; }
+            .header h1 { font-size: 1.7em; }
+            .question-box { padding: 22px 18px; }
+            .question-box p { font-size: 1.1em; }
+            .buttons-row { gap: 12px; }
+            .choice-btn { font-size: 1.1em; padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <h1>Enquête de Satisfaction</h1>
+            <div class="accent-line"></div>
+        </div>
+
+        <div class="question-box">
+            <p>Avez-vous reçu un Matching kit<br>avant le Job dating ?</p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 25px; margin-top: -15px;">
+            <p style="color: #666; font-size: 0.9em; font-style: italic;">📄 <strong>Matching kit</strong> : Document personnalisé pour préparer vos entretiens, basé sur votre profil et l'offre d'une entreprise.</p>
+        </div>
+
+        <div class="buttons-row">
+            <a class="choice-btn" href="https://839bdc2b.sibforms.com/serve/MUIFAAxOOJ49ow2GW3GXSj-eqO1i33mgXiudPY5PGcnLgjNl6R23AzdweJQJWH_f28_Gt7EGcRDEO9qNsNm8jS0oS9CbKZL4NIqKhRWoPiI98nRf5xXD0NARwTZlViWQMufdDp6VRFYTT2DubM_p2nxe8XRSa23-D_Kp6-CaAS-PphB3igFcd9mX7zvJDlNxzOnQCGdS-zHt_8dY">
+                <span class="btn-emoji">✅</span>
+                Oui
+            </a>
+            <a class="choice-btn" href="https://839bdc2b.sibforms.com/serve/MUIFAEL2qRVPAvqipEfSjJdjmI1dMNtGFQQnnrZ0oVP9HumNazFRgHawj8vOxayDjiAZpcGcMD54l2GhNwRmqD2VMCAnmthFl9xlkTef187oN9zkPu_YRFjk6Dyyz1Rv7rEVz4GKTXgYuZnket7f77u-68hAdkz7hmDhEk_8XndnGADmqYpjiHDVGTwF5OilfMyd_Ce0tISgyacE">
+                <span class="btn-emoji">❌</span>
+                Non
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
